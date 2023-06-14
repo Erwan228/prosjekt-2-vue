@@ -1,11 +1,42 @@
 <template>
  <form>
     <label>Name:</label>
+    <input type="text" required v-model="name">
+
+    <label>Age:</label>
+    <input type="number" min="18" required v-model="age">
+
+    <label>Gender:</label>
+    <input type="text" required v-model="gender">
+
+    <label>Weapon:</label>
+    <input type="text" required v-model="weapon">
+
+    <label>Magic:</label>
+    <input type="text" required v-model="magic">
+
+    <label>Race:</label>
+    <input type="text" required v-model="race">
+
+    <label>Motivation:</label>
+    <input type="text" required v-model="motivation">
  </form>
 </template>
 
 <script>
-
+export default{
+    data(){
+        return{
+            name: '',
+            age: '',
+            gender: '',
+            weapon: '',
+            magic: '',
+            race: '',
+            motivation: '',
+        }
+    }
+}
 </script>
 
 <style>
@@ -25,5 +56,21 @@ label {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: bold;
+}
+input, select {
+    display: block;
+    padding: 10px 6px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+input[type="checkbox"]{
+    display: inline-block;
+    width: 16px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 2px;
 }
 </style>
