@@ -1,30 +1,32 @@
 <template>
  <form>
     <label>Name:</label>
-    <input type="text" required :name="name" spellcheck="false">
+    <input type="text" required v-model="name" spellcheck="false">
 
     <label>Age:</label>
-    <input type="number" min="18" required :age="age">
+    <input type="number" min="18" required v-model="age">
 
     <label>Gender:</label>
-    <select :gender="gender">
+    <select v-model="gender">
             <option value="Male" style="background: blue; color: whitesmoke">Male</option>
             <option value="Non-binary" style="background: purple; color: white;">Non-binary</option>
             <option value="Female" style="background: red;">Female</option>
         </select>
 
     <label>Weapon:</label>
-    <input type="text" required :weapon="weapon" spellcheck="false">
+    <input type="text" required v-model="weapon">
 
     <label>Magic:</label>
-    <input type="text" required :magic="magic" spellcheck="false">
+    <input type="text" required v-model="magic">
 
     <label>Race:</label>
-    <input type="text" required :race="race" spellcheck="false">
+    <input type="text" required v-model="race">
 
     <label>Motivation:</label>
-    <input type="text" required :motivation="motivation" spellcheck="false">
+    <input type="text" required v-model="motivation">
  </form>
+<p>{{ name }}</p>
+
 </template>
 
 <script>
@@ -40,7 +42,7 @@ export default{
             motivation: '',
         }
     },
-    props: ['name', 'age', 'gender', 'weapon', 'magic', 'race', 'motivation']
+    // props: ['name', 'age', 'gender', 'weapon', 'magic', 'race', 'motivation']
 }
 </script>
 

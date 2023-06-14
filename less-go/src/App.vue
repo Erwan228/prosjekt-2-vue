@@ -1,9 +1,7 @@
 <template>
-  <h1 v-if="welcome">Welcome to... the program</h1>
-  <h2 v-if="welcome">We don't have a name for it yet...fuck</h2>
-  <h3 v-if="welcome">Anyways, start by filling out this form</h3>
+  <h1 v-if="welcome">Welcome to the battle program.</h1>
+  <h3 v-if="welcome">To get started, start by filling out this form</h3>
 <registration/>
-<p>{{ name }}</p>
 </template>
 
 <script>
