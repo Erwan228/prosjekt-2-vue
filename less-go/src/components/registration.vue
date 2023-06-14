@@ -1,29 +1,29 @@
 <template>
  <form>
     <label>Name:</label>
-    <input type="text" required v-model="name" spellcheck="false">
+    <input type="text" required :name="name" spellcheck="false">
 
     <label>Age:</label>
-    <input type="number" min="18" required v-model="age">
+    <input type="number" min="18" required :age="age">
 
     <label>Gender:</label>
-    <select v-model="gender">
+    <select :gender="gender">
             <option value="Male" style="background: blue; color: whitesmoke">Male</option>
             <option value="Non-binary" style="background: purple; color: white;">Non-binary</option>
             <option value="Female" style="background: red;">Female</option>
         </select>
 
     <label>Weapon:</label>
-    <input type="text" required v-model="weapon">
+    <input type="text" required :weapon="weapon" spellcheck="false">
 
     <label>Magic:</label>
-    <input type="text" required v-model="magic">
+    <input type="text" required :magic="magic" spellcheck="false">
 
     <label>Race:</label>
-    <input type="text" required v-model="race">
+    <input type="text" required :race="race" spellcheck="false">
 
     <label>Motivation:</label>
-    <input type="text" required v-model="motivation">
+    <input type="text" required :motivation="motivation" spellcheck="false">
  </form>
 </template>
 

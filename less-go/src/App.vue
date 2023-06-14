@@ -10,7 +10,6 @@
 import registration from './components/registration.vue'
 export default {
   name: 'App',
-  props: ['name' ],
   components: {
     registration
   },
