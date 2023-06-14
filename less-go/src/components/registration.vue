@@ -25,7 +25,7 @@
     <label>Motivation:</label>
     <input type="text" required v-model="motivation">
  </form>
-<p>{{ name }}</p>
+ <a href="#" onclick="javascript:window.location='mailto:'+'erwan.stephane.beaudoin.005@gmail.com'+'?subject='+'Fighter'+'&body='+name+age+gender+weapon+magic+race+motivation">Email</a>
 
 </template>
 
@@ -34,7 +34,7 @@ export default{
     data(){
         return{
             name: '',
-            age: '',
+            age: 18,
             gender: '',
             weapon: '',
             magic: '',
