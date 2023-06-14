@@ -1,14 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  CUM
+  <h1 v-if="welcome">Welcome to... the program</h1>
+  <h2 v-if="welcome">We don't have a name for it yet...fuck</h2>
+  <h3 v-if="welcome">Anyways, start by filling out this form</h3>
+<registration/>
 </template>
 
 <script>
-
+import registration from './components/registration.vue'
 export default {
   name: 'App',
   components: {
-    
+    registration
+  },
+  data(){
+    return{
+      welcome: true,
+    }
   }
 }
 </script>
