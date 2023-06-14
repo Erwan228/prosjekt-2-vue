@@ -1,13 +1,17 @@
 <template>
  <form>
     <label>Name:</label>
-    <input type="text" required v-model="name">
+    <input type="text" required v-model="name" spellcheck="false">
 
     <label>Age:</label>
     <input type="number" min="18" required v-model="age">
 
     <label>Gender:</label>
-    <input type="text" required v-model="gender">
+    <select v-model="gender">
+            <option value="Male" style="background: blue; color: whitesmoke">Male</option>
+            <option value="Non-binary" style="background: purple; color: white;">Non-binary</option>
+            <option value="Female" style="background: red;">Female</option>
+        </select>
 
     <label>Weapon:</label>
     <input type="text" required v-model="weapon">
@@ -35,7 +39,8 @@ export default{
             race: '',
             motivation: '',
         }
-    }
+    },
+    props: ['name', 'age', 'gender', 'weapon', 'magic', 'race', 'motivation']
 }
 </script>
 
