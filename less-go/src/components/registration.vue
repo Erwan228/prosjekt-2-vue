@@ -25,7 +25,7 @@
     <label>Motivation:</label>
     <input type="text" required v-model="motivation">
  </form>
- <a href="#" onclick="javascript:window.location='mailto:'+'erwan.stephane.beaudoin.005@gmail.com'+'?subject='+'Fighter'+'&body='+name+age+gender+weapon+magic+race+motivation">Email</a>
+ <a href="#" onclick="javascript:window.location='mailto:'+'erwan.stephane.beaudoin.005@gmail.com'+'?subject='+'Fighter'+'&body='+name+realAge+gender+weapon+magic+race+motivation">Email</a>
 
 </template>
 
@@ -33,13 +33,14 @@
 export default{
     data(){
         return{
-            name: '',
+            name: 'e',
             age: 18,
-            gender: '',
-            weapon: '',
-            magic: '',
-            race: '',
-            motivation: '',
+            gender: 'r',
+            weapon: 'w',
+            magic: 'a',
+            race: 'g',
+            motivation: 'w',
+            realAge: toString(age)
         }
     },
     // props: ['name', 'age', 'gender', 'weapon', 'magic', 'race', 'motivation']
