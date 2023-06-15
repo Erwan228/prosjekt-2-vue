@@ -1,31 +1,30 @@
 <template>
  <form>
     <label>Name:</label>
-    <input type="text" required v-model="name" spellcheck="false">
+    <input type="text" required v-model="Name" spellcheck="false">
 
     <label>Age:</label>
-    <input type="number" min="18" required v-model="age">
+    <input type="number" min="18" required v-model="Age">
 
     <label>Gender:</label>
-    <select v-model="gender">
+    <select v-model="Gender">
             <option value="Male" style="background: blue; color: whitesmoke">Male</option>
             <option value="Non-binary" style="background: purple; color: white;">Non-binary</option>
             <option value="Female" style="background: red;">Female</option>
         </select>
 
     <label>Weapon:</label>
-    <input type="text" required v-model="weapon">
+    <input type="text" required v-model="Weapon">
 
     <label>Magic:</label>
-    <input type="text" required v-model="magic">
+    <input type="text" required v-model="Magic">
 
     <label>Race:</label>
-    <input type="text" required v-model="race">
+    <input type="text" required v-model="Race">
 
     <label>Motivation:</label>
-    <input type="text" required v-model="motivation">
+    <input type="text" required v-model="Motivation">
  </form>
- <a href="#" onclick="javascript:window.location='mailto:'+'erwan.stephane.beaudoin.005@gmail.com'+'?subject='+'Fighter'+'&body='+name+realAge+gender+weapon+magic+race+motivation">Email</a>
 
 </template>
 
@@ -33,17 +32,15 @@
 export default{
     data(){
         return{
-            name: 'e',
-            age: 18,
-            gender: 'r',
-            weapon: 'w',
-            magic: 'a',
-            race: 'g',
-            motivation: 'w',
-            realAge: toString(age)
+            Name: 'e',
+            Age: 18,
+            Gender: 'Non-binary',
+            Weapon: 'w',
+            Magic: 'a',
+            Race: 'g',
+            Motivation: 'w',
         }
     },
-    // props: ['name', 'age', 'gender', 'weapon', 'magic', 'race', 'motivation']
 }
 </script>
 

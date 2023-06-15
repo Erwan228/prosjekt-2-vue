@@ -9,7 +9,7 @@ import registration from './components/registration.vue'
 export default {
   name: 'App',
   components: {
-    registration
+    registration 
   },
   data(){
     return{
