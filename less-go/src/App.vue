@@ -3,7 +3,7 @@
   <h3 v-if="welcome">To get started, start by filling out this form</h3>
 <registration @saveData="makeFinal"/>
 <button @click="doIt">Come on pls</button>
-<p id="allInfoen" v-if="final">{{ name }} {{ age }} {{ gender }} {{ race }} {{ magic }} {{ weapon }} {{ motivation }}</p>
+<p id="allInfoen" v-if="final">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
 </template>
 
 <script>
