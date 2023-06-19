@@ -7,7 +7,7 @@
     <input type="number" min="18" required v-model="Age">
 
     <label>Gender:</label>
-    <select v-model="Gender">
+    <select v-model="Gender" required>
             <option value="Male" style="background: blue; color: whitesmoke">Male</option>
             <option value="Non-binary" style="background: purple; color: white;">Non-binary</option>
             <option value="Female" style="background: red;">Female</option>

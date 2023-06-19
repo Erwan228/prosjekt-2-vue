@@ -1,9 +1,11 @@
 <template>
   <h1 v-if="welcome">Welcome to the battle program.</h1>
   <h3 v-if="welcome">To get started, start by filling out this form</h3>
-<registration @saveData="makeFinal"/>
-<button @click="doIt">Come on pls</button>
-<p id="allInfoen" v-if="final">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
+  <registration @saveData="makeFinal"/>
+  <h3 v-if="submitted">Wonderful, now we will review your info by pressing the button below</h3>
+  <button @click="doIt">Come on pls</button>
+  <p id="allInfoen" v-if="final">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
+  <button v-if="final" @click="newTest">New thing</button>
 </template>
 
 <script>
@@ -24,6 +26,7 @@ export default {
       weapon: '',
       motivation: '',
       final: false,
+      submitted: false,
     }
   },
   methods: {
@@ -45,6 +48,7 @@ export default {
       this.magic = Magic
       this.weapon = Weapon
       this.motivation = Motivation
+      this.submitted = true
     }
   }
 }
