@@ -39,6 +39,12 @@ export default {
     },
     makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){
       this.name = Name
+      this.age = Age
+      this.gender = Gender
+      this.race = Race
+      this.magic = Magic
+      this.weapon = Weapon
+      this.motivation = Motivation
     }
   }
 }
