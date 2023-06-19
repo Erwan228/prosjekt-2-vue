@@ -1,19 +1,22 @@
 <template>
+  <Modal v-if="notPermitted"/>
   <h1 v-if="welcome">Welcome to the battle program.</h1>
   <h3 v-if="welcome">To get started, start by filling out this form</h3>
   <registration @saveData="makeFinal"/>
   <h3 v-if="submitted">Wonderful, now we will review your info by pressing the button below</h3>
   <button @click="doIt">Come on pls</button>
   <p id="allInfoen" v-if="final">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
-  <button v-if="final" @click="newTest">New thing</button>
+  <button v-if="final" @click="getAllInfo">Hent ut infoen</button>
 </template>
 
 <script>
+import Modal from './components/modal.vue'
 import registration from './components/registration.vue'
 export default {
   name: 'App',
   components: {
-    registration 
+    registration,
+    Modal,
   },
   data(){
     return{
@@ -27,9 +30,28 @@ export default {
       motivation: '',
       final: false,
       submitted: false,
+      notPermitted: false,
     }
   },
   methods: {
+    makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){ /*sjekker om karakter er gammel nok*/
+      if(Age > 18){
+        this.welcome = false
+        this.final = false
+        this.submitted = false
+        this.notPermitted = true
+      }
+
+
+      this.name = Name
+      this.age = Age
+      this.gender = Gender
+      this.race = Race
+      this.magic = Magic
+      this.weapon = Weapon
+      this.motivation = Motivation
+      this.submitted = true
+    },
     doIt(){
       console.log(this.name)
       console.log(this.age)
@@ -40,15 +62,8 @@ export default {
       console.log(this.motivation)
       this.final = true
     },
-    makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){
-      this.name = Name
-      this.age = Age
-      this.gender = Gender
-      this.race = Race
-      this.magic = Magic
-      this.weapon = Weapon
-      this.motivation = Motivation
-      this.submitted = true
+    getAllInfo(){
+      console.log(document.getElementById('allInfoen').innerHTML)
     }
   }
 }
