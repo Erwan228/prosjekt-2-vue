@@ -13,17 +13,19 @@
             <option value="Female" style="background: red;">Female</option>
         </select>
 
-    <label>Weapon:</label>
-    <input type="text" required v-model="Weapon">
-
-    <label>Magic:</label>
-    <input type="text" required v-model="Magic">
-
     <label>Race:</label>
-    <input type="text" required v-model="Race">
+    <input type="text" required v-model="Race" spellcheck="false">
+    
+    <label>Magic:</label>
+    <input type="text" required v-model="Magic" spellcheck="false">
+
+    <label>Weapon:</label>
+    <input type="text" required v-model="Weapon" spellcheck="false">
 
     <label>Motivation:</label>
-    <input type="text" required v-model="Motivation">
+    <input type="text" required v-model="Motivation" spellcheck="false">
+
+    <button @click.prevent="$emit('saveData', this.Name, this.Age, this.Gender, this.Race, this.Magic, this.Weapon, this.Motivation)" @click="log">Submit</button>
  </form>
 
 </template>
@@ -32,15 +34,26 @@
 export default{
     data(){
         return{
-            Name: 'e',
+            Name: '',
             Age: 18,
-            Gender: 'Non-binary',
-            Weapon: 'w',
-            Magic: 'a',
-            Race: 'g',
-            Motivation: 'w',
+            Gender: '',
+            Race: '',
+            Magic: '',
+            Weapon: '',
+            Motivation: '',
         }
     },
+    methods: {
+        log(){
+            console.log(this.Name)
+            console.log(this.Age)
+            console.log(this.Gender)
+            console.log(this.Race)
+            console.log(this.Magic)
+            console.log(this.Weapon)
+            console.log(this.Motivation)
+        }
+    }
 }
 </script>
 

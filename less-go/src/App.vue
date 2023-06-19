@@ -1,7 +1,9 @@
 <template>
   <h1 v-if="welcome">Welcome to the battle program.</h1>
   <h3 v-if="welcome">To get started, start by filling out this form</h3>
-<registration/>
+<registration @saveData="makeFinal"/>
+<button @click="doIt">Come on pls</button>
+<p v-if="final">{{ name }} {{ age }} {{ gender }} {{ race }} {{ magic }} {{ weapon }} {{ motivation }}</p>
 </template>
 
 <script>
@@ -14,6 +16,29 @@ export default {
   data(){
     return{
       welcome: true,
+      name: '',
+      age: null,
+      gender: '',
+      race: '',
+      magic: '',
+      weapon: '',
+      motivation: '',
+      final: false,
+    }
+  },
+  methods: {
+    doIt(){
+      console.log(this.name)
+      console.log(this.age)
+      console.log(this.gender)
+      console.log(this.race)
+      console.log(this.magic)
+      console.log(this.weapon)
+      console.log(this.motivation)
+      this.final = true
+    },
+    makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){
+      this.name = Name
     }
   }
 }
@@ -27,5 +52,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.lessGo {
+  background: #0b6dff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
 }
 </style>
