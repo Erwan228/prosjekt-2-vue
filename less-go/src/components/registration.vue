@@ -57,7 +57,7 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 form {
     max-width: 420px;
     margin: 30px auto;
@@ -90,5 +90,15 @@ input[type="checkbox"]{
     margin: 0 10px 0 0;
     position: relative;
     top: 2px;
+}
+
+button{
+    position: center;
+    background: #0b6dff;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: white;
+    border-radius: 20px;
 }
 </style>

@@ -67,4 +67,13 @@ export default {
     color: white;
     border-radius: 20px;
 }
+button{
+  position: center;
+    background: #0ad696;
+    border: 0;
+    padding: 10px 20px;
+    margin-top: 0px;
+    color: white;
+    border-radius: 20px;
+}
 </style>
