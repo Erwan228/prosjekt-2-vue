@@ -63,7 +63,8 @@ export default {
       this.final = true
     },
     getAllInfo(){
-      console.log(document.getElementById('allInfoen').innerHTML)
+      // console.log(document.getElementById('allInfoen').innerHTML)
+      //bruk data binding, ikke get element
     }
   }
 }
