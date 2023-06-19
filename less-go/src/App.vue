@@ -35,14 +35,13 @@ export default {
   },
   methods: {
     makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){ /*sjekker om karakter er gammel nok*/
-      if(Age > 18){
+      if(Age < 18){
         this.welcome = false
         this.final = false
         this.submitted = false
         this.notPermitted = true
       }
-
-
+      else{
       this.name = Name
       this.age = Age
       this.gender = Gender
@@ -51,6 +50,7 @@ export default {
       this.weapon = Weapon
       this.motivation = Motivation
       this.submitted = true
+      }
     },
     doIt(){
       console.log(this.name)
