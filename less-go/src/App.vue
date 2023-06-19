@@ -34,8 +34,8 @@ export default {
     }
   },
   methods: {
-    makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){ /*sjekker om karakter er gammel nok*/
-      if(Age < 18){
+    makeFinal(Name, Age, Gender, Race, Magic, Weapon, Motivation){ 
+      if(Age < 18){ /*sjekker om karakter er gammel nok*/
         this.welcome = false
         this.final = false
         this.submitted = false
