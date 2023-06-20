@@ -7,7 +7,7 @@
   <button @click="doIt">Come on pls</button>
   <p v-if="final" ref="allInfoen">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
   <button v-if="final" @click="getAllInfo">Send me your character</button>
-  <Email v-if="emailForm"/>
+  <Email :data="infoenTilEmail" v-if="emailForm"/>
 </template>
 
 <script>

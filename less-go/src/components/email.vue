@@ -7,3 +7,13 @@
     <input type="submit" value="Send">
     </form>
 </template>
+
+<script>
+export default{
+    props: ['infoenTilEmail']
+}
+</script>
+
+<style>
+
+</style>
