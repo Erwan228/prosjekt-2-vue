@@ -5,11 +5,13 @@
   <registration @saveData="makeFinal"/>
   <h3 v-if="submitted">Wonderful, now we will review your info by pressing the button below</h3>
   <button @click="doIt">Come on pls</button>
-  <p id="allInfoen" v-if="final">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
-  <button v-if="final" @click="getAllInfo">Hent ut infoen</button>
+  <p v-if="final" ref="allInfoen">Name: {{ name }}, Age: {{ age }}, Gender: {{ gender }}, Race: {{ race }}, Magic: {{ magic }}, Weapon: {{ weapon }}, Motivation: {{ motivation }}</p>
+  <button v-if="final" @click="getAllInfo">Send me your character</button>
+  <Email v-if="emailForm"/>
 </template>
 
 <script>
+import Email from './components/email.vue'
 import Modal from './components/modal.vue'
 import registration from './components/registration.vue'
 export default {
@@ -17,6 +19,7 @@ export default {
   components: {
     registration,
     Modal,
+    Email,
   },
   data(){
     return{
@@ -31,6 +34,8 @@ export default {
       final: false,
       submitted: false,
       notPermitted: false,
+      infoenTilEmail: '',
+      emailForm: false,
     }
   },
   methods: {
@@ -63,8 +68,10 @@ export default {
       this.final = true
     },
     getAllInfo(){
-      // console.log(document.getElementById('allInfoen').innerHTML)
-      //bruk data binding, ikke get element
+      console.log(this.$refs.allInfoen.innerHTML)
+      this.infoenTilEmail = this.$refs.allInfoen.innerHTML
+      console.log(this.infoenTilEmail)
+      this.emailForm = true      
     }
   }
 }
